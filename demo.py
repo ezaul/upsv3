@@ -6,7 +6,7 @@ SHUNT_OHMS = 0.05
 
 def read():
     """Define method to read information from coulometer."""
-    ina = INA219(SHUNT_OHMS)
+    ina = INA219(SHUNT_OHMS, busnum=1)
     ina.configure()
     print("Bus Voltage: %.3f V" % ina.voltage())
     try:
